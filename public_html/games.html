@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Drag & Drop | Games</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' type='text/css' href='styles.css'>
+    </head>
+    <body onload="generateGame()">
+    
+        <header>Drag & Drop App!</header>
+       
+        <nav class = 'menu'>
+            <span><a href='index.html' >Home</a></span>
+            <span><a href='register.html' >Register</a></span>
+            <span><a href='games.html' >Games</a></span>
+            <span><a href='logs.html' >Logs</a></span>
+            <span><a href='login.html' >Login</a></span>
+        </nav>
+        
+        <aside class="sidebar">
+            Add an advertising image here
+        </aside>
+        
+        <article class = 'mainContent'>
+            Player: 
+            
+            <section>
+              <div id="alreadyDiv"></div>  
+              
+              <div id="gameBtnArea">
+                <input type="button" id="newGame" class="gameBtns" value="New Game" onclick="generateGame()">
+                <input type="button" id="quitGame" class="gameBtns" value="Quit Game">
+              </div>
+                
+            </section>
+            
+        </article>
+        
+        <footer>&copy; 2016 Drag & Drop App!, All Rights Reserved</footer>
+        
+        <script src = "script.js" type="text/javascript"></script>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Drag & Drop | Register</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' type='text/css' href='styles.css'>
+    </head>
+    <body>
+        <header>Drag & Drop App!</header>
+       
+        <nav class = 'menu'>
+            <span><a href='index.html' >Home</a></span>
+            <span><a href='register.html' >Register</a></span>
+            <span><a href='games.html' >Games</a></span>
+            <span><a href='logs.html' >Logs</a></span>
+            <span><a href='login.html' >Login</a></span>
+        </nav>
+        
+        <aside class="sidebar">
+            Add an advertising image here
+        </aside>
+        
+        <article class = 'mainContent'>
+            
+            <h2>Registration Page</h2>
+            
+            <div id="userInfo">
+                        <table>
+                            <tr>
+                                <td>Username:</td>
+                                <td><input type="text" name="userName" id="userName"></td>
+                            </tr>
+                            <tr>
+                                <td>First Name:</td>
+                                <td><input type="text" name="usrfirstName" id="firstName"></td>
+                            </tr>
+                            <tr>
+                                <td>Last Name:</td>
+                                <td><input type="text" name="usrLastName" id="lastName"></td>
+                            </tr>
+                            <tr>
+                                <td>Password:</td>
+                                <td><input type="password" name="password" id="pwd"></td>
+                            </tr>
+                            <tr>
+                                <td>Email Address:</td>
+                                <td><input type="text" name="usrEmail" id="email"></td>
+                            </tr>
+                            <tr>
+                                <td>Gender:</td>
+                                <td><input type="radio" name="usrGender" id="gender" value="Male">Male</td>
+                                <td><input type="radio" name="usrGender" id="gender" value="Female">Female</td>
+                            </tr>
+                            <tr>
+                                <td><input type="button" id="submit" value="Submit" onclick="registerUser()"></td>
+                                <td><input type="reset" id="cancel" value="Cancel" onclick="btnCancelClicked()"></td>
+                            </tr>
+                        </table>
+                    </div>
+        </article>
+        
+        <footer>&copy; 2016 Drag & Drop App!, All Rights Reserved</footer>
+        
+        <script src = "script.js" type="text/javascript"></script>
+    </body>
+</html>
