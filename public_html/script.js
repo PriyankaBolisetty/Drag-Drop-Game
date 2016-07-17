@@ -6,6 +6,12 @@ var listWordsLength;
 
 var loginDetails = {};
 
+var imgArray = [];
+imgArray[0] = "images/images.jpeg";
+imgArray[1] = "images/images.png";
+imgArray[2] = "images/11.jpg";
+var x = 0;
+
 var txtUsrName = document.getElementById('userName');
 var txtFirstName = document.getElementById('firstName');
 var txtLastName = document.getElementById('lastName');
@@ -95,20 +101,26 @@ function getRandomWord(){
 }
 
 function generateGame(){
+    imgChanger();
     var word = getRandomWord();
     getGameWordBoxes(word);
     getToBeFilledBoxes(word);
     addDragEvents();
+    countdown(3);
+}
+
+function newGame(){
+    window.location = "http://localhost:8383/Priyanka_15400_CS557A_HW3/games.html";
+}
+
+function quitGame(){
+    var yesOrNo = confirm("Are you sure you want to cancel this game?");
+    if(yesOrNo == true){
+        window.location = "http://localhost:8383/Priyanka_15400_CS557A_HW3/games.html"  
+    } 
 }
 
 function getGameWordBoxes(word){
-    
-   /*var div = document.getElementById("panel");
-    if (div) {
-        div.parentNode.removeChild(div);
-    }*/
-    
-    
     var shuffledWord = shuffelWord((listWords[word]));
     var divId = 0;
     var oldDiv;
@@ -138,6 +150,7 @@ function getGameWordBoxes(word){
 }
 
 function getToBeFilledBoxes(word){
+    
     var br1 = document.createElement("br");
     br1.style = "left: 0 px";
     var br2 = document.createElement("br");
@@ -211,17 +224,52 @@ function handleOverDrop(e) {
     }
     draggedEl.parentNode.removeChild(draggedEl);
     this.appendChild(draggedEl);
-    //this.className = "";
-    checkIfWon();
+    this.className = "";
+    //this.className = "droppedPositions";
+    //checkIfWon();
 }
 
 function checkIfWon(){
     var targets = document.getElementsByClassName("droppedPositions");
     
     for (i = 0; i < targets.length; i++) {
-        alert(targets[i].children[0].innerHTML);
+        //alert(targets[i].children[0].innerHTML);
         /*targets[i].addEventListener("drop", handleOverDrop);
         targets[i].addEventListener("dragenter", handleDragEnterLeave);
         targets[i].addEventListener("dragleave", handleDragEnterLeave);*/
     }
+}
+
+function countdown(minutes) {
+    var seconds = 60;
+    var mins = minutes
+    
+    function tick() {
+        var counter = document.getElementById("timer");
+        var current_minutes = mins-1
+        seconds--;
+        counter.innerHTML = "Time left: " +
+        current_minutes.toString() + " : " + (seconds < 10 ? "0" : "") + String(seconds) + " min";
+        if( seconds > 0 ) {
+            setTimeout(tick, 1000);
+        } else {
+            if(mins > 1){
+               // countdown(mins-1);   never reach “00″ issue solved:Contributed by Victor Streithorst
+               setTimeout(function () { countdown(mins - 1); }, 1000);
+            }
+        }
+    }
+    
+    tick();
+}
+
+function imgChanger(){
+    var img = document.getElementById("image");
+    img.setAttribute('src', imgArray[x]);
+    x++;
+
+    if(x >= imgArray.length){
+        x = 0;
+    } 
+    setTimeout("imgChanger()", 1000);
 }

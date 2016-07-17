@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel='stylesheet' type='text/css' href='styles.css'>
     </head>
-    <body>
+    <body onload="imgChanger()">
         <header>Drag & Drop App!</header>
        
         <nav class = 'menu'>
@@ -18,11 +18,42 @@
         </nav>
         
         <aside class="sidebar">
-            Add an advertising image here
+            <img id='image' src='images/c1.png' alt='Image not found!'/>
         </aside>
         
         <article class = 'mainContent'>
-            Logs
+            <h2>Player Activities Page </h2>
+             <table>
+                <tr>
+                    <td>Player Name</td>
+                    <td>Start Date/Time</td>
+                    <td>End Date/Time</td>
+                    <td>Game Word</td>
+                    <td>Result</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="stuLastName" id="lastName"></td>
+                </tr>
+                <tr>
+                    <td>Student ID:</td>
+                    <td><input type="text" name="stuId" id="studentId"></td>
+                </tr>
+                <tr>
+                    <td>Area of Specialization:</td>
+                    <td>
+                        <select id="stuSpecialization">
+                            <option name="programming">Programming</option>
+                            <option name="database">Database</option>
+                            <option name="testing">Testing</option>
+                            <option name="networking">Networking</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Selected:</td>
+                    <td><input type="checkbox" id="stuSelected"></td>
+                </tr>
+            </table>
         </article>
         
         <footer>&copy; 2016 Drag & Drop App!, All Rights Reserved</footer>

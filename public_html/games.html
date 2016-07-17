@@ -19,7 +19,7 @@
         </nav>
         
         <aside class="sidebar">
-            Add an advertising image here
+           <img id='image' src='images/c1.png' alt='Image not found!'/>
         </aside>
         
         <article class = 'mainContent'>
@@ -27,16 +27,14 @@
             
             <section>
               <div id="alreadyDiv"></div>  
-              
               <div id="gameBtnArea">
-                <input type="button" id="newGame" class="gameBtns" value="New Game" onclick="generateGame()">
-                <input type="button" id="quitGame" class="gameBtns" value="Quit Game">
+                <input type="button" id="newGame" class="gameBtns" value="New Game" onclick="newGame()">
+                <input type="button" id="quitGame" class="gameBtns" value="Quit Game" onclick="quitGame()">
               </div>
-                
             </section>
             
+            <div id="timer"></div>
         </article>
-        
         <footer>&copy; 2016 Drag & Drop App!, All Rights Reserved</footer>
         
         <script src = "script.js" type="text/javascript"></script>

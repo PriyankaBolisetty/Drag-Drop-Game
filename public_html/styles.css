@@ -82,7 +82,7 @@ footer{
 #panel {
     height: 90px;
     width: 60%;
-    margin: 2px;
+    margin: 15px;
     float: left;
 }
 
@@ -129,4 +129,16 @@ footer{
     display: inline-block;
     font-size: 20px;
     margin: 4px 2px;
+}
+
+#timer{
+    padding: 20px;
+    margin-right: 5px;
+    background-color: #4CAF50;
+    float: right;
+    width: 120px;
+    height: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
 }
