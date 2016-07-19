@@ -1,8 +1,18 @@
 
+/* 
+ * Student Info: Name=PriyankaBolisetty, ID=15400
+ * Subject: CS557A_HW3_Summer_2016
+ * Author: Expression Priyanka is undefined on line 6, column 27 in file:///Users/priyanka/NetBeansProjects/Priyanka_15400_CS557A_HW3
+ * Filename: Expression Priyanka_CS557_15400_HW3 is undefined on line 7, column 29 in file:///Users/priyanka/NetBeansProjects/Priyanka_15400_CS557A_HW3.
+ * Date and Time: Jun 10, 2016 7:27:02 AM
+ * Project Name: Priyanka_15400_CS557A_HW3
+ */
+
 var lstUsers = [];
 var usersInLocal;
 var listWords = ["APPLE", "ORANGE", "BANANA", "GRAPE", "MANGO", "GINGER", "COFFEE", "PEPPER", "BREAD", "COURSE"];
 var listWordsLength;
+var boxesLength = 0; var droppedElementValues = [];
 
 var loginDetails = {};
 
@@ -101,6 +111,7 @@ function getRandomWord(){
 }
 
 function generateGame(){
+    alert("Congratulations, you won the game")
     imgChanger();
     var word = getRandomWord();
     getGameWordBoxes(word);
@@ -146,11 +157,11 @@ function getGameWordBoxes(word){
         panelDiv.appendChild(parentDiv);
         oldDiv.appendChild(panelDiv);
         divId++;
+        boxesLength++;
     }  
 }
 
 function getToBeFilledBoxes(word){
-    
     var br1 = document.createElement("br");
     br1.style = "left: 0 px";
     var br2 = document.createElement("br");
@@ -223,21 +234,29 @@ function handleOverDrop(e) {
         return;
     }
     draggedEl.parentNode.removeChild(draggedEl);
-    this.appendChild(draggedEl);
+    this.appendChild(draggedEl);    
     this.className = "";
-    //this.className = "droppedPositions";
-    //checkIfWon();
+    
+    var droppedElements = document.getElementsByClassName("box letter");
+    for (var i = boxesLength; i < 2 * droppedElements.length; i++) {
+        var value = droppedElements[i].innerHTML;
+        droppedElementValues.push(value);
+    }
+    
+    var j = 0;
+    while(droppedElementValues[j] !== "" && j < droppedElementValues.length){
+        checkIfWon();
+        j++;
+    }      
 }
 
 function checkIfWon(){
     var targets = document.getElementsByClassName("droppedPositions");
     
     for (i = 0; i < targets.length; i++) {
-        //alert(targets[i].children[0].innerHTML);
-        /*targets[i].addEventListener("drop", handleOverDrop);
-        targets[i].addEventListener("dragenter", handleDragEnterLeave);
-        targets[i].addEventListener("dragleave", handleDragEnterLeave);*/
+    
     }
+    
 }
 
 function countdown(minutes) {
