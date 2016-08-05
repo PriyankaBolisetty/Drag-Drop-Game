@@ -1,13 +1,4 @@
 
-/* 
- * Student Info: Name=PriyankaBolisetty, ID=15400
- * Subject: CS557A_HW3_Summer_2016
- * Author: Expression Priyanka is undefined on line 6, column 27 in file:///Users/priyanka/NetBeansProjects/Priyanka_15400_CS557A_HW3
- * Filename: Expression Priyanka_CS557_15400_HW3 is undefined on line 7, column 29 in file:///Users/priyanka/NetBeansProjects/Priyanka_15400_CS557A_HW3.
- * Date and Time: Jun 10, 2016 7:27:02 AM
- * Project Name: Priyanka_15400_CS557A_HW3
- */
-
 var lstUsers = [];
 var usersInLocal;
 var listWords = ["APPLE", "ORANGE", "BANANA", "GRAPE", "MANGO", "GINGER", "COFFEE", "PEPPER", "BREAD", "COURSE"];
@@ -87,7 +78,6 @@ function clearAllFields(){
     txtPwd.value = '';
     txtEmail.value = '';
     document.getElementById('gender').checked = false;
-    //gender.
 }
 
 //Local Storage
